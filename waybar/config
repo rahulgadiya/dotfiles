@@ -1,0 +1,75 @@
+{ 
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["hyprland/window", "hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "battery", "memory"],
+
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%H:%M  📅 %Y, %d %B, %A}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    "memory": {
+        "interval": 10,
+        "format": "{used:0.1f}G 🧠"
+    },
+
+    "network": {
+        "format": "{ifname} {ipaddr}",
+        "format-wifi": "📶 {signalStrength}%",
+        "format-ethernet": "🌐",
+        "format-disconnected": "❌"
+    },
+
+    "hyprland/workspaces": {
+        "format": "  {id}  ",
+        "active-only" : true
+    },
+
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 45
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-icons": {
+            "default": ["🔈", "🔉", "🔊"]
+        }
+    },
+  
+    "bluetooth": {
+        "format": "{status}"
+    },
+    
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 10
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% (charging) {icon}",
+        "format-plugged": "{capacity}% (plugged) {icon}",
+        "format-full": "{capacity}% (full) {icon}",
+        "format-icons": ["🪫", "🔋", "🔋", "🔋", "🔋"]
+    }
+}
